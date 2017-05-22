@@ -16,7 +16,7 @@ function driver(options) {
     tr.request(ctx.url, function(err, res, body) {
       if (err) return fn(err);
       ctx.status = res.statusCode;
-      ctx.url = res.request.uri.Url.href;
+      ctx.url = res.request.uri.href;
       ctx.set(res.headers);
       ctx.body = body;
       return fn(null, ctx);
